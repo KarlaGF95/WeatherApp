@@ -1,0 +1,116 @@
+.container {
+  background-color: #ffe5d8;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  color: #543d69;
+  font-weight: 900;
+  font-size: 35px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  color: #543d69;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #f67280;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.weatherToday {
+  background-color: #f7efeb;
+  max-width: 275px;
+  max-height: 275px;
+  margin: 0 auto;
+  border: 3px solid #a93153;
+  border-radius: 50%;
+}
+
+.weatherTodayIcon {
+  text-align: center;
+  font-size: 100px;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  color: #a93153;
+  margin-bottom: 0;
+}
+
+.weatherTodayTemperature {
+  text-align: center;
+  font-size: 40px;
+  color: #a93153;
+  padding-top: 0px;
+  margin-top: 0;
+}
+.maxTemperatureToday,
+.maxTemperature {
+  font-weight: 700;
+}
+
+.minTemperatureToday,
+.minTemperature {
+  font-weight: 300;
+}
+
+.nextDays {
+  color: #543d69;
+  font-weight: 600;
+  font-size: 20px;
+  padding-top: 45px;
+}
+
+.date {
+  color: #f67280;
+  font-weight: 600;
+}
+
+.weather-icon {
+  padding-top: 15px;
+  margin-bottom: 0;
+  padding-bottom: 7px;
+  text-align: center;
+  font-size: 28px;
+  color: #a93153;
+}
+
+.temperature {
+  text-align: center;
+  padding-top: 0px;
+  margin-top: 0px;
+  color: #a93153;
+}
+
+.card {
+  border: 2px solid #a93153;
+  border-radius: 18px;
+  margin-top: 3px;
+  margin-bottom: 30px;
+  background-color: #f7efeb;
+}
+
+.form {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #a93153;
+  border-radius: 10px;
+  background-color: #f7efeb;
+}
