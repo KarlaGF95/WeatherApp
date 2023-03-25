@@ -114,3 +114,10 @@ h3 {
   border-radius: 10px;
   background-color: #f7efeb;
 }
+
+#github-link {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #543d69;
+  margin-top: 60px;
+}
