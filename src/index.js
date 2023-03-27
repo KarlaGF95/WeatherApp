@@ -128,26 +128,19 @@ let currentTime = `${currentHours}:${currentMinutes}`;
 document.querySelector("h3").innerHTML = `${currentFullDate} @ ${currentTime}`;
 
 function updateWeather(response) {
-  document.querySelector("h1").innerHTML = `${response.data.name}`;
-  document.querySelector("h2").innerHTML = " ";
-  let maxTemperatureToday = Math.round(response.data.main.temp_max);
-  let maxTemperatureTodayElement = document.querySelector(
-    ".maxTemperatureToday"
-  );
-  maxTemperatureTodayElement.innerHTML = `${maxTemperatureToday}&deg`;
-  let minTemperatureToday = Math.round(response.data.main.temp_min);
-  let minTemperatureTodayElement = document.querySelector(
-    ".minTemperatureToday"
-  );
-  minTemperatureTodayElement.innerHTML = `/ ${minTemperatureToday}&deg`;
+  document.querySelector("h1").innerHTML = `${response.data.city}`;
+  document.querySelector("h2").innerHTML = `${response.data.country}`;
+  let currentTemperature = Math.round(response.data.temperature.current);
+  let currentTemperatureElement = document.querySelector(".currentDegrees");
+  currentTemperatureElement.innerHTML = `${currentTemperature}`;
 }
 
 function searchCity(event) {
   event.preventDefault();
-  let apiKey = "c8a77112b2faf6684bb4b21a0aa778ae";
+  let apiKey = "8a791e3ct3b2f517a9ob0f0038efb4fd";
   let units = "metric";
   let city = document.querySelector("#citySearch");
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city.value}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(updateWeather);
 }
 
