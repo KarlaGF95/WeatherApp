@@ -54,14 +54,16 @@ h3 {
   margin-top: 0px;
 }
 
-.currentWeatherDescription {
+#description {
   padding-top: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: larger;
   text-align: center;
   padding-bottom: 0px;
   color: #a93153;
   margin-top: 0px;
   margin-bottom: 0px;
+  text-transform: capitalize;
 }
 
 .currentTemperature {

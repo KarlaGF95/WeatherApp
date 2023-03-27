@@ -130,9 +130,18 @@ document.querySelector("h3").innerHTML = `${currentFullDate} @ ${currentTime}`;
 function updateWeather(response) {
   document.querySelector("h1").innerHTML = `${response.data.city}`;
   document.querySelector("h2").innerHTML = `${response.data.country}`;
-  let currentTemperature = Math.round(response.data.temperature.current);
-  let currentTemperatureElement = document.querySelector(".currentDegrees");
-  currentTemperatureElement.innerHTML = `${currentTemperature}`;
+  let currentTemperatureElement = document.querySelector("#current-degrees");
+  currentTemperatureElement.innerHTML = Math.round(
+    response.data.temperature.current
+  );
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${response.data.condition.description}`;
+  let windElement = document.querySelector("#wind");
+  let wind = Math.round(response.data.wind.speed);
+  windElement.innerHTML = `Wind: ${wind}km/h`;
+  let humidityElement = document.querySelector("#humidity");
+  let humidity = Math.round(response.data.temperature.humidity);
+  humidityElement.innerHTML = `Humidity: ${humidity}%`;
 }
 
 function searchCity(event) {
