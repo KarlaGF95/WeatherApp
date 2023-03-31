@@ -145,7 +145,7 @@ function updateWeather(response) {
   let humidity = Math.round(response.data.temperature.humidity);
   humidityElement.innerHTML = `Humidity: ${humidity}%`;
   let iconElement = document.querySelector("#weathericon");
-  iconElement.setAttribute("src", `response.data.daily.condition.icon_url`);
+  iconElement.setAttribute("src", response.data.daily.condition.icon_url);
 }
 
 function searchCity(event) {
