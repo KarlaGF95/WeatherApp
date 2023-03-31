@@ -125,7 +125,9 @@ let currentMinutes = minuteNumbers[now.getMinutes()];
 let currentFullDate = `${currentDay} ${currentDate}/${currentMonth}`;
 let currentTime = `${currentHours}:${currentMinutes}`;
 
-document.querySelector("h3").innerHTML = `${currentFullDate} @ ${currentTime}`;
+document.querySelector(
+  "h3"
+).innerHTML = `Last update: ${currentFullDate} @ ${currentTime}`;
 
 function updateWeather(response) {
   document.querySelector("h1").innerHTML = `${response.data.city}`;
