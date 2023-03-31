@@ -64,7 +64,7 @@ h3 {
 
 .currentTemperature {
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
   color: #a93153;
   padding-top: 0px;
   margin-top: 0;
@@ -86,6 +86,16 @@ h3 {
 .date {
   color: #f67280;
   font-weight: 600;
+}
+
+.currentWeather .active {
+  color: #a93153;
+  text-decoration: none;
+  cursor: default;
+}
+
+.currentWeather .active:hover {
+  text-decoration: none;
 }
 
 .weather-icon {
