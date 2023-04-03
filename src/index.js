@@ -148,17 +148,20 @@ function updateWeather(response) {
   celsiusTemperature = response.data.temperature.current;
 }
 
-function searchCity(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "8a791e3ct3b2f517a9ob0f0038efb4fd";
-  let units = "metric";
-  let city = document.querySelector("#citySearch");
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city.value}&key=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", handleSubmit);
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -184,3 +187,5 @@ fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displayCelsiusTemperature);
+
+search("Amsterdam");
