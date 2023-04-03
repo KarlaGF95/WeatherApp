@@ -129,6 +129,36 @@ document.querySelector(
   "h3"
 ).innerHTML = `Last update: ${currentFullDate} @ ${currentTime}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["13/02", "14/02", "15/02", "16/02", "17/02", "18/02"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2 text-center">
+          <span class="date">${day}</span>
+          <div class="card mx-auto" style="width: 5rem; height: 6rem">
+            <p class="weather-icon">
+              <i class="fa-solid fa-sun"></i>
+            </p>
+            <p class="temperature">
+              <span class="maxTemperature"> 13&deg; </span
+              ><span class="minTemperature">/ 3&deg;</span>
+            </p>
+          </div>
+        </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function updateWeather(response) {
   document.querySelector("h1").innerHTML = `${response.data.city}`;
   document.querySelector("h2").innerHTML = `${response.data.country}`;
@@ -189,3 +219,4 @@ let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 search("Amsterdam");
+displayForecast();
