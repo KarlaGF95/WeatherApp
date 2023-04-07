@@ -129,25 +129,22 @@ document.querySelector(
   "h3"
 ).innerHTML = `Last update: ${currentFullDate} @ ${currentTime}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["13/02", "14/02", "15/02", "16/02", "17/02", "18/02"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  let forecastHTML = `<div class="col-2 text-center">`;
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2 text-center">
-          <span class="date">${day}</span>
+          <span class="date">${forecastDay.time}</span>
           <div class="card mx-auto" style="width: 5rem; height: 6rem">
-            <p class="weather-icon">
-              <i class="fa-solid fa-sun"></i>
-            </p>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition[0].icon}.png" alt="weather icon" />
             <p class="temperature">
-              <span class="maxTemperature"> 13&deg; </span
-              ><span class="minTemperature">/ 3&deg;</span>
+              <span class="maxTemperature"> ${forecastDay.temperature.max}&deg; </span
+              ><span class="minTemperature">/ ${forecastDay.temperature.min}&deg;</span>
             </p>
           </div>
         </div>
