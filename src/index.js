@@ -159,6 +159,12 @@ function displayForecast() {
   console.log(forecastHTML);
 }
 
+function getForecast(city) {
+  let apiKey = "8a791e3ct3b2f517a9ob0f0038efb4fd";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function updateWeather(response) {
   document.querySelector("h1").innerHTML = `${response.data.city}`;
   document.querySelector("h2").innerHTML = `${response.data.country}`;
