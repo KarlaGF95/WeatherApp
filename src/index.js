@@ -194,8 +194,6 @@ function updateWeather(response) {
   let iconElement = document.querySelector("#weathericon");
   iconElement.setAttribute("src", response.data.condition.icon_url);
 
-  celsiusTemperature = response.data.temperature.current;
-
   getForecast(response.data.coordinates);
 }
 
@@ -213,31 +211,6 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#current-degrees");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  celsiuslink.classList.remove("active");
-  fahrenheitlink.classList.add("active");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiuslink.classList.add("active");
-  fahrenheitlink.classList.remove("active");
-  let temperatureElement = document.querySelector("#current-degrees");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitlink = document.querySelector("#fahrenheit-link");
-fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiuslink = document.querySelector("#celsius-link");
-celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 search("Amsterdam");
 displayForecast();
